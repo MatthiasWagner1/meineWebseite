@@ -1,0 +1,48 @@
+Soll ich dir bei der Composer-Installation helfen, falls er noch fehlt?
+Du:
+composer ist installiert. Composer version 2.5.8.
+composer show: No composer.json in current directory, do you want to use the one at /var/www/html/meineWebseite? [Y,n]?
+ChatGPT:
+
+Perfekt, dass Composer installiert ist! 👍
+
+Als Nächstes:
+
+Wenn du bei composer show gefragt wirst:
+
+    No composer.json in current directory, do you want to use the one at /var/www/html/meineWebseite? [Y,n]?
+
+Dann gib einfach Y ein und drück Enter – denn genau da (im Projektordner) sollte deine composer.json liegen.
+Danach:
+
+Wenn das Paket sandreas/php-epub-meta nicht in der Liste auftaucht, installierst du es mit:
+
+cd /var/www/html/meineWebseite
+composer require sandreas/php-epub-meta
+
+Das erstellt (bzw. ergänzt) automatisch die composer.json und den vendor/-Ordner mit dem Autoloader.
+
+Sobald das erledigt ist, bitte sicherstellen:
+
+In deiner functions.php (oder scan_epub.php) ganz oben:
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+(oder __DIR__ . '/vendor/autoload.php', je nach Dateipfad – ich helfe dir gern, den korrekten Pfad zu bestimmen.)
+
+Möchtest du, dass ich mir den Anfang deiner functions.php oder scan_epub.php ansehe, um das zu prüfen?
+Du:
+wofür brauche ich das? es funktioniert doch  - noch nicht perfekt aber wenn die fehler jetzt korrigiert sind ...
+ChatGPT:
+
+Gute Frage – und du hast völlig recht, das zu hinterfragen!
+Die Antwort:
+
+Du brauchst Composer und den Autoloader nur dann, wenn dein Projekt externe PHP-Bibliotheken nutzt – z. B. die sandreas/php-epub-meta-Bibliothek, um EPUB-Metadaten auszulesen.
+
+➡️ Wenn dein Code auch ohne diese Bibliothek funktioniert und du eigene Metadatenverarbeitung geschrieben hast oder einfache Tools verwendest, dann brauchst du Composer gar nicht.
+Wann ist Composer nötig?
+Situation	Brauchst du Composer?
+Du nutzt require 'vendor/autoload.php'	✅ Ja
+Du verwendest sandreas/php-epub-meta, league/csv, guzzle, etc.	✅ Ja
+Du hast reinen PHP-Code ohne externe Libraries	❌ Nein

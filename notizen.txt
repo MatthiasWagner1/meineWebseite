@@ -1,0 +1,124 @@
+
+
+
+diba
+--------------------------------------------------
+
+
+
+
+
+
+heimnetz_ip.php
+--------------------------------------------------
+
+datensatz löschen
+ip numerisch sortieren
+nach den letzten 3 ziffern
+
+--------------------------------------------------
+epub - ebooks aus media/daten/Buecher/ebooks
+
+Ordner nach Größe
+
+
+ebooks              416,4 GiB   350.024 Dateien
+LeserSammlung       299,5 GiB   288.183 Dateien
+Asgard Deckar       22,4 GiB    11.018 Dateien
+SpiegelBestseller   18,9 GiB    7.876 Dateien
+e-book.german 2016  8,6 GiB     6.385 Dateien
+COLLECTION          2,5 GiB     698 Dateien
+
+ebooks gesamt       860,6 GiB   713.648 Dateien
+
+original Daten aus media/daten/Buecher/ebooks:
+
+ 581932 epub
+  51474 jpg
+  36281 keine_endung
+  26061 pdf
+   6080 mobi
+   3163 azw3
+   1076 txt
+    643 opf
+    606 mp3
+    549 rar
+    256 rtf
+    221 nzb
+    218 html
+    190 lit
+    168 htmlz
+    111 par2
+    104 db
+    100 nfo
+
+
+epub
+--------------------------------------------------
+
+so geht es:
+vorher das verzeichnis ebooks mit:
+
+jeder darf alles und alles in gruppe www-data
+sudo chmod -R +775 ebooks/ && chown -cR matthias:www-data ebooks/  
+
+
+Ordner ebooks_neu: alles löschen
+
+sudo chown -R matthias:www-data ebooks_neu/ && chmod -R 775 ebooks_neu/
+
+sudo chmod -R +775 ebooks/ && sudo chown -cR matthias:www-data ebooks/ && sudo chown -R matthias:www-data ebooks_neu/ && sudo chown -cR matthias:www-data ebooks/
+
+phpMyAdmin: 
+
+tab_author soll nicht leer sein
+
+TRUNCATE TABLE <Tabellenname> 
+
+TRUNCATE TABLE tab_autor
+TRUNCATE TABLE tab_ebooks
+
+auf pve!
+sudo rm -rf ebooks_neu/* löscht alle dateienen und verzeichnisse
+
+auf pve
+sudo chmod -R +775 ebooks_test/ && sudo chown -cR matthias:www-data ebooks_test/ && sudo chown -R matthias:www-data ebooks_neu_test/ && sudo chown -cR matthias:www-data ebooks_test/
+
+
+auf pve als root ohne sudo
+chmod -R +775 ebooks_test/ && chown -cR matthias:www-data ebooks_test/ && chown -R matthias:www-data ebooks_neu_test/ && chown -cR matthias:www-data ebooks_test/
+
+
+
+sudo chown -R matthias:www-data ebooks_neu/ && sudo chmod -R 775 ebooks_neu/
+sudo chmod -R +775 ebooks/ && sudo chown -cR matthias:www-data ebooks/
+
+
+im Browser starten:
+http://192.168.59.63/meineWebseite/html/ebook-lesen-verschieben.php
+
+
+NEU
+im Browser starten: 
+http://192.168.59.63/meineWebseite/html/scan_epub.php
+
+
+ganz neu
+http://192.168.59.63/meineWebseite/codepal/
+
+
+doppelte einträge finden
+--------------------------------------------------
+
+SELECT titel, fs_autor, COUNT(*)
+FROM tab_ebooks
+GROUP BY titel, fs_autor
+HAVING COUNT(*) > 1 
+
+
+ 	tab_autor 	  	Einfügen Einfügen 	Leeren Leeren 	Löschen Löschen 	242 	InnoDB 	utf8mb4_general_ci 	16,0 KiB 	-
+	tab_ebooks 	  	Einfügen Einfügen 	Leeren Leeren 	Löschen Löschen 	266 	
+
+
+
+

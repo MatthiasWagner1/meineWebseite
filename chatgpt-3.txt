@@ -1,0 +1,5 @@
+das ist die version mit epub parser
+require_once 'vendor/autoload.php'; // z.B. für ePub-Lesen via PHP EPUB Reader
+
+use Sandreas\Structura\Parser\EpubParser;
+

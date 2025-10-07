@@ -1,0 +1,257 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+  <metadata xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dc:creator opf:role="aut" opf:file-as="Fitzek, Sebastian">Sebastian Fitzek</dc:creator>
+<meta content="Das Joshua-Profil: Thriller" name="calibre:title_sort"/>
+    <dc:contributor opf:role="bkp">calibre (2.41.0) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">6c053d91-017b-4792-a92a-2f2f17c8bf42</dc:identifier>
+    <dc:date>2015-10-25T23:00:00+00:00</dc:date>
+    <meta content="2015-10-26T06:36:47.152000+00:00" name="calibre:timestamp"/>
+    <meta name="cover" content="cover"/>
+    <meta content="0.8.900" name="Sigil version"/>
+    <dc:date xmlns:opf="http://www.idpf.org/2007/opf" opf:event="modification">2015-10-26</dc:date>
+  <dc:title>Das Joshua-Profil</dc:title>
+<dc:publisher>BASTEI LÜBBE</dc:publisher>
+<meta name="calibre:rating" content="8.0"/>
+<dc:subject>Krimis &amp; Thriller</dc:subject>
+<dc:subject>Deutschland</dc:subject>
+<dc:description>&lt;p class="description"&gt;Der erfolglose Schriftsteller Max ist ein gesetzestreuer Bürger. Anders als sein Bruder Cosmo, der in der Sicherheitsverwahrung einer psychiatrischen Anstalt sitzt, hat Max sich noch niemals im Leben etwas zuschulden kommen lassen. Doch in wenigen Tagen wird er eines der entsetzlichsten Verbrechen begehen, zu denen ein Mensch überhaupt fähig ist. Nur, dass er heute noch nichts davon weiß ... im Gegensatz zu denen, die ihn töten wollen, bevor es zu spät ist. Entdecken Sie auch "Die Blutschule" - unter dem bisher anonymen Schriftsteller Max Rhode verbirgt sich niemand geringeres als Bestsellerautor Sebastian Fitzek!&lt;/p&gt;</dc:description>
+<meta name="calibre:author_link_map" content="{&quot;Sebastian Fitzek&quot;: &quot;&quot;}"/>
+<dc:language>de</dc:language>
+<dc:identifier opf:scheme="calibre">b2471254-abb4-406d-8b46-95841dc4a2b4</dc:identifier>
+<dc:identifier opf:scheme="ISBN">9783785725450</dc:identifier>
+<dc:identifier opf:scheme="AMAZON_DE">3785725450</dc:identifier>
+<dc:identifier opf:scheme="GOOGLE">cbBjCAAAQBAJ</dc:identifier>
+<meta name="calibre:user_metadata:#yesno" content="{&quot;link_column&quot;: &quot;value&quot;, &quot;label&quot;: &quot;yesno&quot;, &quot;display&quot;: {}, &quot;column&quot;: &quot;value&quot;, &quot;datatype&quot;: &quot;bool&quot;, &quot;#value#&quot;: null, &quot;is_custom&quot;: true, &quot;is_multiple&quot;: null, &quot;table&quot;: &quot;custom_column_2&quot;, &quot;kind&quot;: &quot;field&quot;, &quot;is_csp&quot;: false, &quot;rec_index&quot;: 24, &quot;is_category&quot;: false, &quot;is_editable&quot;: true, &quot;category_sort&quot;: &quot;value&quot;, &quot;is_multiple2&quot;: {}, &quot;search_terms&quot;: [&quot;#yesno&quot;], &quot;name&quot;: &quot;Erledigt&quot;, &quot;colnum&quot;: 2, &quot;#extra#&quot;: null}"/>
+        <meta name="calibre:user_metadata:#formats" content="{&quot;link_column&quot;: &quot;value&quot;, &quot;label&quot;: &quot;formats&quot;, &quot;display&quot;: {&quot;composite_sort&quot;: &quot;text&quot;, &quot;use_decorations&quot;: 0, &quot;make_category&quot;: false, &quot;contains_html&quot;: false, &quot;composite_template&quot;: &quot;{:'approximate_formats()'}&quot;}, &quot;column&quot;: &quot;value&quot;, &quot;datatype&quot;: &quot;composite&quot;, &quot;#value#&quot;: &quot;AZW3,EPUB,MOBI,PDF&quot;, &quot;is_custom&quot;: true, &quot;is_multiple&quot;: null, &quot;table&quot;: &quot;custom_column_1&quot;, &quot;kind&quot;: &quot;field&quot;, &quot;is_csp&quot;: false, &quot;rec_index&quot;: 22, &quot;is_category&quot;: false, &quot;is_editable&quot;: true, &quot;category_sort&quot;: &quot;value&quot;, &quot;is_multiple2&quot;: {}, &quot;search_terms&quot;: [&quot;#formats&quot;], &quot;name&quot;: &quot;Formate&quot;, &quot;colnum&quot;: 1, &quot;#extra#&quot;: null}"/>
+        <meta name="calibre:user_metadata:#genre" content="{&quot;link_column&quot;: &quot;value&quot;, &quot;label&quot;: &quot;genre&quot;, &quot;display&quot;: {&quot;use_decorations&quot;: 0, &quot;enum_values&quot;: [&quot;Fantasy&quot;, &quot;Sci-Fi&quot;, &quot;Krimi&quot;, &quot;Thriller&quot;, &quot;Horror&quot;, &quot;Humor&quot;, &quot;Western&quot;, &quot;Roman&quot;], &quot;description&quot;: &quot;&quot;, &quot;enum_colors&quot;: []}, &quot;column&quot;: &quot;value&quot;, &quot;datatype&quot;: &quot;enumeration&quot;, &quot;#value#&quot;: null, &quot;is_custom&quot;: true, &quot;is_multiple&quot;: null, &quot;table&quot;: &quot;custom_column_3&quot;, &quot;kind&quot;: &quot;field&quot;, &quot;is_csp&quot;: false, &quot;rec_index&quot;: 23, &quot;is_category&quot;: true, &quot;is_editable&quot;: true, &quot;category_sort&quot;: &quot;value&quot;, &quot;is_multiple2&quot;: {}, &quot;search_terms&quot;: [&quot;#genre&quot;], &quot;name&quot;: &quot;Genre&quot;, &quot;colnum&quot;: 3, &quot;#extra#&quot;: null}"/>
+        </metadata>
+  <manifest>
+    <item href="Images/cover.jpeg" id="cover" media-type="image/jpeg"/>
+    <item href="Images/00002.jpeg" id="id2" media-type="image/jpeg"/>
+    <item href="Images/00003.jpeg" id="id3" media-type="image/jpeg"/>
+    <item href="Images/00004.jpeg" id="id4" media-type="image/jpeg"/>
+    <item href="Images/00005.jpeg" id="id5" media-type="image/jpeg"/>
+    <item href="Text/Auszug 'Die Blutschule'.html" id="Auszug__Die_Blutschule_.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Autor.html" id="Autor.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Bewertung Buch.html" id="Bewertung_Buch.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Buch.html" id="Buch.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Danksagung.html" id="Danksagung.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Impressum.html" id="Impressum.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Inhaltsverzeichnis.html" id="Inhaltsverzeichnis.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Leseempfehlungen.html" id="Leseempfehlungen.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Leseprobe 'Die Blutschule'.html" id="Leseprobe__Die_Blutschule_.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Motto.html" id="Motto.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Nachwort.html" id="Nachwort.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Patiententagebuch - Anfang.html" id="Patiententagebuch_-_Anfang.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Titel.html" id="Titel.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Widmung.html" id="Widmung.html" media-type="application/xhtml+xml"/>
+    <item href="Text/Zitate.html" id="Zitate.html" media-type="application/xhtml+xml"/>
+    <item href="Text/part0009.html" id="id17" media-type="application/xhtml+xml"/>
+    <item href="Text/part0010.html" id="id18" media-type="application/xhtml+xml"/>
+    <item href="Text/part0011.html" id="id19" media-type="application/xhtml+xml"/>
+    <item href="Text/part0012.html" id="id20" media-type="application/xhtml+xml"/>
+    <item href="Text/part0013.html" id="id21" media-type="application/xhtml+xml"/>
+    <item href="Text/part0014.html" id="id22" media-type="application/xhtml+xml"/>
+    <item href="Text/part0015.html" id="id23" media-type="application/xhtml+xml"/>
+    <item href="Text/part0016.html" id="id24" media-type="application/xhtml+xml"/>
+    <item href="Text/part0017.html" id="id25" media-type="application/xhtml+xml"/>
+    <item href="Text/part0018.html" id="id26" media-type="application/xhtml+xml"/>
+    <item href="Text/part0019.html" id="id27" media-type="application/xhtml+xml"/>
+    <item href="Text/part0020.html" id="id28" media-type="application/xhtml+xml"/>
+    <item href="Text/part0021.html" id="id29" media-type="application/xhtml+xml"/>
+    <item href="Text/part0022.html" id="id30" media-type="application/xhtml+xml"/>
+    <item href="Text/part0023.html" id="id31" media-type="application/xhtml+xml"/>
+    <item href="Text/part0024.html" id="id32" media-type="application/xhtml+xml"/>
+    <item href="Text/part0025.html" id="id33" media-type="application/xhtml+xml"/>
+    <item href="Text/part0026.html" id="id34" media-type="application/xhtml+xml"/>
+    <item href="Text/part0027.html" id="id35" media-type="application/xhtml+xml"/>
+    <item href="Text/part0028.html" id="id36" media-type="application/xhtml+xml"/>
+    <item href="Text/part0029.html" id="id37" media-type="application/xhtml+xml"/>
+    <item href="Text/part0030.html" id="id38" media-type="application/xhtml+xml"/>
+    <item href="Text/part0031.html" id="id39" media-type="application/xhtml+xml"/>
+    <item href="Text/part0032.html" id="id40" media-type="application/xhtml+xml"/>
+    <item href="Text/part0033.html" id="id41" media-type="application/xhtml+xml"/>
+    <item href="Text/part0034.html" id="id42" media-type="application/xhtml+xml"/>
+    <item href="Text/part0035.html" id="id43" media-type="application/xhtml+xml"/>
+    <item href="Text/part0036.html" id="id44" media-type="application/xhtml+xml"/>
+    <item href="Text/part0037.html" id="id45" media-type="application/xhtml+xml"/>
+    <item href="Text/part0038.html" id="id46" media-type="application/xhtml+xml"/>
+    <item href="Text/part0039.html" id="id47" media-type="application/xhtml+xml"/>
+    <item href="Text/part0040.html" id="id48" media-type="application/xhtml+xml"/>
+    <item href="Text/part0041.html" id="id49" media-type="application/xhtml+xml"/>
+    <item href="Text/part0042.html" id="id50" media-type="application/xhtml+xml"/>
+    <item href="Text/part0043.html" id="id51" media-type="application/xhtml+xml"/>
+    <item href="Text/part0044.html" id="id52" media-type="application/xhtml+xml"/>
+    <item href="Text/part0045.html" id="id53" media-type="application/xhtml+xml"/>
+    <item href="Text/part0046.html" id="id54" media-type="application/xhtml+xml"/>
+    <item href="Text/part0047.html" id="id55" media-type="application/xhtml+xml"/>
+    <item href="Text/part0048.html" id="id56" media-type="application/xhtml+xml"/>
+    <item href="Text/part0049.html" id="id57" media-type="application/xhtml+xml"/>
+    <item href="Text/part0050.html" id="id58" media-type="application/xhtml+xml"/>
+    <item href="Text/part0051.html" id="id59" media-type="application/xhtml+xml"/>
+    <item href="Text/part0052.html" id="id60" media-type="application/xhtml+xml"/>
+    <item href="Text/part0053.html" id="id61" media-type="application/xhtml+xml"/>
+    <item href="Text/part0054.html" id="id62" media-type="application/xhtml+xml"/>
+    <item href="Text/part0055.html" id="id63" media-type="application/xhtml+xml"/>
+    <item href="Text/part0056.html" id="id64" media-type="application/xhtml+xml"/>
+    <item href="Text/part0057.html" id="id65" media-type="application/xhtml+xml"/>
+    <item href="Text/part0058.html" id="id66" media-type="application/xhtml+xml"/>
+    <item href="Text/part0059.html" id="id67" media-type="application/xhtml+xml"/>
+    <item href="Text/part0060.html" id="id68" media-type="application/xhtml+xml"/>
+    <item href="Text/part0061.html" id="id69" media-type="application/xhtml+xml"/>
+    <item href="Text/part0062_split_000.html" id="id702" media-type="application/xhtml+xml"/>
+    <item href="Text/part0062_split_001.html" id="id701" media-type="application/xhtml+xml"/>
+    <item href="Text/part0063.html" id="id71" media-type="application/xhtml+xml"/>
+    <item href="Text/part0064.html" id="id72" media-type="application/xhtml+xml"/>
+    <item href="Text/part0065.html" id="id73" media-type="application/xhtml+xml"/>
+    <item href="Text/part0066.html" id="id74" media-type="application/xhtml+xml"/>
+    <item href="Text/part0067.html" id="id75" media-type="application/xhtml+xml"/>
+    <item href="Text/part0068.html" id="id76" media-type="application/xhtml+xml"/>
+    <item href="Text/part0069.html" id="id77" media-type="application/xhtml+xml"/>
+    <item href="Text/part0070.html" id="id78" media-type="application/xhtml+xml"/>
+    <item href="Text/part0071.html" id="id79" media-type="application/xhtml+xml"/>
+    <item href="Text/part0072.html" id="id80" media-type="application/xhtml+xml"/>
+    <item href="Text/part0073.html" id="id81" media-type="application/xhtml+xml"/>
+    <item href="Text/part0074.html" id="id82" media-type="application/xhtml+xml"/>
+    <item href="Text/part0075.html" id="id83" media-type="application/xhtml+xml"/>
+    <item href="Text/part0076.html" id="id84" media-type="application/xhtml+xml"/>
+    <item href="Text/part0077.html" id="id85" media-type="application/xhtml+xml"/>
+    <item href="Text/part0078.html" id="id86" media-type="application/xhtml+xml"/>
+    <item href="Text/part0079.html" id="id87" media-type="application/xhtml+xml"/>
+    <item href="Text/part0080.html" id="id88" media-type="application/xhtml+xml"/>
+    <item href="Text/part0081.html" id="id89" media-type="application/xhtml+xml"/>
+    <item href="Text/part0082.html" id="id90" media-type="application/xhtml+xml"/>
+    <item href="Text/part0083.html" id="id91" media-type="application/xhtml+xml"/>
+    <item href="Text/part0084.html" id="id92" media-type="application/xhtml+xml"/>
+    <item href="Text/part0085.html" id="id93" media-type="application/xhtml+xml"/>
+    <item href="Text/part0086.html" id="id94" media-type="application/xhtml+xml"/>
+    <item href="Text/part0087.html" id="id95" media-type="application/xhtml+xml"/>
+    <item href="Text/part0088.html" id="id96" media-type="application/xhtml+xml"/>
+    <item href="Text/part0089.html" id="id97" media-type="application/xhtml+xml"/>
+    <item href="Text/part0090.html" id="id98" media-type="application/xhtml+xml"/>
+    <item href="Text/part0091.html" id="id99" media-type="application/xhtml+xml"/>
+    <item href="Text/part0092.html" id="id100" media-type="application/xhtml+xml"/>
+    <item href="Text/part0093.html" id="id101" media-type="application/xhtml+xml"/>
+    <item href="Text/part0096_split_001.html" id="id1042" media-type="application/xhtml+xml"/>
+    <item href="Fonts/Comic-Sans-MS-Bold-Italic.ttf" id="font3" media-type="application/x-font-truetype"/>
+    <item href="Fonts/Comic-Sans-MS-Bold.ttf" id="font1" media-type="application/x-font-truetype"/>
+    <item href="Fonts/Comic-Sans-MS-Italic.ttf" id="font2" media-type="application/x-font-truetype"/>
+    <item href="Fonts/Comic-Sans-MS.ttf" id="font" media-type="application/x-font-truetype"/>
+    <item href="Styles/page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="Styles/stylesheet.css" id="css" media-type="text/css"/>
+    <item href="Text/titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="Buch.html"/>
+    <itemref idref="Titel.html"/>
+    <itemref idref="Inhaltsverzeichnis.html"/>
+    <itemref idref="Widmung.html"/>
+    <itemref idref="Motto.html"/>
+    <itemref idref="Auszug__Die_Blutschule_.html"/>
+    <itemref idref="Zitate.html"/>
+    <itemref idref="id17"/>
+    <itemref idref="id18"/>
+    <itemref idref="id19"/>
+    <itemref idref="id20"/>
+    <itemref idref="id21"/>
+    <itemref idref="id22"/>
+    <itemref idref="id23"/>
+    <itemref idref="id24"/>
+    <itemref idref="id25"/>
+    <itemref idref="id26"/>
+    <itemref idref="id27"/>
+    <itemref idref="id28"/>
+    <itemref idref="id29"/>
+    <itemref idref="id30"/>
+    <itemref idref="id31"/>
+    <itemref idref="id32"/>
+    <itemref idref="id33"/>
+    <itemref idref="id34"/>
+    <itemref idref="id35"/>
+    <itemref idref="id36"/>
+    <itemref idref="id37"/>
+    <itemref idref="id38"/>
+    <itemref idref="id39"/>
+    <itemref idref="id40"/>
+    <itemref idref="id41"/>
+    <itemref idref="id42"/>
+    <itemref idref="id43"/>
+    <itemref idref="id44"/>
+    <itemref idref="id45"/>
+    <itemref idref="id46"/>
+    <itemref idref="id47"/>
+    <itemref idref="id48"/>
+    <itemref idref="id49"/>
+    <itemref idref="id50"/>
+    <itemref idref="id51"/>
+    <itemref idref="id52"/>
+    <itemref idref="id53"/>
+    <itemref idref="id54"/>
+    <itemref idref="id55"/>
+    <itemref idref="id56"/>
+    <itemref idref="id57"/>
+    <itemref idref="id58"/>
+    <itemref idref="id59"/>
+    <itemref idref="id60"/>
+    <itemref idref="id61"/>
+    <itemref idref="id62"/>
+    <itemref idref="id63"/>
+    <itemref idref="id64"/>
+    <itemref idref="id65"/>
+    <itemref idref="id66"/>
+    <itemref idref="id67"/>
+    <itemref idref="id68"/>
+    <itemref idref="id69"/>
+    <itemref idref="id702"/>
+    <itemref idref="id701"/>
+    <itemref idref="id71"/>
+    <itemref idref="id72"/>
+    <itemref idref="id73"/>
+    <itemref idref="id74"/>
+    <itemref idref="id75"/>
+    <itemref idref="id76"/>
+    <itemref idref="id77"/>
+    <itemref idref="id78"/>
+    <itemref idref="id79"/>
+    <itemref idref="id80"/>
+    <itemref idref="id81"/>
+    <itemref idref="id82"/>
+    <itemref idref="id83"/>
+    <itemref idref="id84"/>
+    <itemref idref="id85"/>
+    <itemref idref="id86"/>
+    <itemref idref="id87"/>
+    <itemref idref="id88"/>
+    <itemref idref="id89"/>
+    <itemref idref="id90"/>
+    <itemref idref="id91"/>
+    <itemref idref="id92"/>
+    <itemref idref="id93"/>
+    <itemref idref="id94"/>
+    <itemref idref="id95"/>
+    <itemref idref="id96"/>
+    <itemref idref="id97"/>
+    <itemref idref="id98"/>
+    <itemref idref="id99"/>
+    <itemref idref="id100"/>
+    <itemref idref="id101"/>
+    <itemref idref="Nachwort.html"/>
+    <itemref idref="Danksagung.html"/>
+    <itemref idref="Leseprobe__Die_Blutschule_.html"/>
+    <itemref idref="id1042"/>
+    <itemref idref="Patiententagebuch_-_Anfang.html"/>
+    <itemref idref="Bewertung_Buch.html"/>
+    <itemref idref="Leseempfehlungen.html"/>
+    <itemref idref="Autor.html"/>
+    <itemref idref="Impressum.html"/>
+  </spine>
+  <guide>
+    <reference href="Text/Inhaltsverzeichnis.html#0-6a06668531814078945756dbbf424be6" title="Inhalt" type="toc"/>
+    <reference href="Text/Buch.html#x9783732512713-1" title="text" type="text"/>
+    <reference href="Text/Widmung.html#x9783732512713-5" title="Impressum" type="copyright-page"/>
+    <reference href="Text/titlepage.xhtml" title="Cover" type="cover"/>
+  </guide>
+</package>

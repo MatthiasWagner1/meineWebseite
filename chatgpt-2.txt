@@ -1,0 +1,27 @@
+die bash befehle führe ich vor dem start des scriptes für den ordner ebooks/ und den ordner ebooks_neu aus. könnte man das in den php script integrieren?
+
+
+ich habe scan_epub.php gestartet:
+die autoren wurden in die datenbank übernommen und mir ist kein fehler aufgefallen.
+
+es wurden nur 6 ebooks (von ca, 180) in die datenbank übernommen.
+
+die ebooks enthalten viele fehler. ein paar beispiele und wie damit umgegangen werden soll:
+
+Fehler bei Verarbeitung [/var/www/html/ebooks/Prof. Dr. Andreas Michalsen - Mit Ern] - SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2019' for column `ebooks`.`tab_ebooks`.`veroeffentlichung` at row 1
+hier muss statt eines fehlers das feld veroeffentlichung leer bleiben und die anderen daten des ebooks in die db eingetragen werden. dieser fehler tritt sehr oft auf
+
+Fehlende Metadaten (Autor oder Titel) [/var/www/html/ebooks/Alexandra Reinwarth - Am Arsch vorbei geht auch ein Weg.epub]
+hier fehlt der Autor oder titel. bitte keinAutor als autor eintragen und keinTitel als Titel eintragen
+
+Fehler bei Verarbeitung [/var/www/html/ebooks/Lucy Foley - Sommernacht.epub] - SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'cover' at row 1
+hier muss statt eines fehlers das feld cover leer bleiben und die anderen daten des ebooks in die db eingetragen werden. dieser fehler tritt sehr oft auf
+
+OPF-Datei nicht gefunden in: /var/www/html/ebooks/Lucinda Riley - Die sieben Schwestern 06 - Die Sonnenschwester.epub
+bedeuted das, dass keine metadaten zur verfügung stehen? dann bitte alle möglichen daten übernehmen und als titel und autor keinTitel und keinAutor eintragen
+
+bitte immer: wenn fehler in den metadaten sind - trotzdem alle möglichen daten übernehmen - und das .epub in den entsprechenden ordner in ebooks_neu verschieben
+
+
+
+

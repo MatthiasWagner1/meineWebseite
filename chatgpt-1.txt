@@ -1,0 +1,305 @@
+Hallo, wir haben jetzt viel geändert und ich habe etwas den überblick verloren. Ich schicke dir nochmal alle daten:
+Danach würde ich:
+den ordner ebooks/ mit testdaten befüllen
+im ordner ebooks_neu alle daten löschen
+
+sudo chmod -R +775 ebooks/
+sudo chown -cR matthias:www-data ebooks/
+
+sudo chown -R matthias:www-data /var/www/html/ebooks_neu
+sudo chmod -R 775 /var/www/html/ebooks_neu
+
+danach einen funktionstest machen.
+
+ist das gut so?
+
+
+1. die Spalten aus tab:ebooks
+Spalte
+ausgabe (varchar)
+Spalte
+beschreibung (text)
+Spalte
+bewertung (varchar, NULL, nullable)
+Spalte
+buchwunsch (varchar, NULL, nullable)
+Spalte
+cover (blob)
+Spalte
+date (date, NULL, nullable)
+Spalte
+eingetragen_am (date, NULL, nullable)
+Spalte
+fs_autor (mediumint)
+Spalte
+herausgeber (varchar)
+Spalte
+id (PRI, int)
+Spalte
+isbn (varchar)
+Spalte
+label (varchar)
+Spalte
+pfad (varchar)
+Spalte
+sprache (varchar)
+Spalte
+titel (varchar, NULL, nullable)
+Spalte
+veroeffentlichung (date, NULL, nullable)
+
+2. scan_epub.php
+<?php
+session_start();
+
+if (!isset($_SESSION['epubs'])) $_SESSION['epubs'] = [];
+if (!isset($_SESSION['errors'])) $_SESSION['errors'] = [];
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require 'functions.php';
+require 'db.php';
+
+$startDir = '/var/www/html/ebooks';
+$zielVerzeichnis = '/var/www/html/ebooks_neu';
+
+$counter = [
+    'epubs' => 0,
+    'errors' => 0
+];
+
+scanDirectory($startDir, $pdo, $zielVerzeichnis, $counter);
+
+echo "<br>Gefundene EPUBs: " . $counter['epubs'];
+echo "<br>Fehlerhafte Dateien: " . $counter['errors'];
+
+echo "<h2>Verarbeitete EPUB-Dateien</h2>";
+if (!empty($_SESSION['epubs'])) {
+    echo "<ul>";
+    foreach ($_SESSION['epubs'] as $msg) {
+        echo "<li style='color:green;'>$msg</li>";
+    }
+    echo "</ul>";
+} else {
+    echo "<p style='color:gray;'>Keine EPUB-Dateien verarbeitet.</p>";
+}
+
+echo "<h2>Fehlermeldungen</h2>";
+if (!empty($_SESSION['errors'])) {
+    echo "<ul>";
+    foreach ($_SESSION['errors'] as $err) {
+        echo "<li style='color:red;'>$err</li>";
+    }
+    echo "</ul>";
+} else {
+    echo "<p style='color:gray;'>Keine Fehler aufgetreten.</p>";
+}
+
+$_SESSION['epubs'] = [];
+$_SESSION['errors'] = [];
+?>
+
+3. functions.php
+<?php
+
+function isEpub($filePath) {
+    $zip = new ZipArchive;
+    if ($zip->open($filePath) === TRUE) {
+        $mimetype = $zip->getFromName('mimetype');
+        $zip->close();
+        return trim($mimetype) === 'application/epub+zip';
+    }
+    return false;
+}
+
+function scanDirectory($directory, $pdo, $zielVerzeichnis, &$counter) {
+    $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($directory));
+
+    foreach ($rii as $file) {
+        if ($file->isDir()) continue;
+
+        $filePath = $file->getPathname();
+
+        if (isEpub($filePath)) {
+            echo "Verarbeite EPUB: $filePath<br>";
+
+            try {
+                $zip = new ZipArchive;
+                $zip->open($filePath);
+                $opfPath = getOpfPath($zip);
+                $opfContent = $zip->getFromName($opfPath);
+
+                $dom = new DOMDocument();
+                @$dom->loadXML($opfContent);
+
+                $autor = normalizeautor(getNodeValue($dom, 'creator'));
+                $titel = getNodeValue($dom, 'title');
+
+                if (empty($autor) || empty($titel)) {
+                    $_SESSION['errors'][] = "Fehlende Metadaten: $filePath";
+                    $counter['errors']++;
+                    continue;
+                }
+
+                processEpub($filePath, $autor, $titel, $zielVerzeichnis);
+                $counter['epubs']++;
+
+            } catch (Exception $e) {
+                $_SESSION['errors'][] = "Fehler bei Verarbeitung: $filePath - " . $e->getMessage();
+                $counter['errors']++;
+            }
+
+        } else {
+            echo "Übersprungen (kein gültiger EPUB): $filePath<br>";
+        }
+    }
+}
+
+function getOpfPath($zip) {
+    $container = $zip->getFromName('META-INF/container.xml');
+    $xml = new DOMDocument();
+    @$xml->loadXML($container);
+    $rootfile = $xml->getElementsByTagName('rootfile')->item(0);
+    return $rootfile->getAttribute('full-path');
+}
+
+function getNodeValue($doc, $tag) {
+    $nodes = $doc->getElementsByTagName($tag);
+    return $nodes->length ? trim($nodes->item(0)->nodeValue) : '';
+}
+
+function normalizeautor($autor) {
+    $autor = preg_replace("/[\$'\\\\!]/", '', $autor);
+    if (strpos($autor, ',') !== false) {
+        [$nachname, $vorname] = array_map('trim', explode(',', $autor));
+        $autor = "$vorname $nachname";
+    }
+    return trim($autor);
+}
+
+function processEpub($filePath, $pdo, $zielVerzeichnis, &$counter)
+{
+    if (!file_exists($filePath)) {
+        $_SESSION['errors'][] = "Datei nicht gefunden: $filePath";
+        $counter['errors']++;
+        return;
+    }
+
+    $zip = new ZipArchive;
+    if ($zip->open($filePath) === TRUE) {
+        $opfPath = '';
+        $container = $zip->getFromName('META-INF/container.xml');
+        if ($container) {
+            $xml = simplexml_load_string($container);
+            $opfPath = (string) $xml->rootfiles->rootfile['full-path'];
+        }
+
+        if (!$opfPath || !$zip->locateName($opfPath)) {
+            $_SESSION['errors'][] = "OPF-Datei nicht gefunden in: $filePath";
+            $zip->close();
+            $counter['errors']++;
+            return;
+        }
+
+        $opfContent = $zip->getFromName($opfPath);
+        $opf = new DOMDocument();
+        @$opf->loadXML($opfContent);
+        $autor = getNodeValue($opf, 'creator');
+        $autor = normalizeautor($autor);
+        $title = getNodeValue($opf, 'title');
+        $sprache = getNodeValue($opf, 'language');
+        $isbn = getNodeValue($opf, 'identifier');
+        $beschreibung = getNodeValue($opf, 'description');
+        $veroeffentlichung = getNodeValue($opf, 'date');
+
+        // Cover extrahieren
+        $cover = null;
+        $opfXml = simplexml_load_string($opfContent);
+        $opfXml->registerXPathNamespace('opf', 'http://www.idpf.org/2007/opf');
+        $opfXml->registerXPathNamespace('dc', 'http://purl.org/dc/elements/1.1/');
+        $coverId = '';
+        foreach ($opfXml->metadata->meta as $meta) {
+            if ((string)$meta['name'] === 'cover') {
+                $coverId = (string)$meta['content'];
+                break;
+            }
+        }
+
+        $coverPath = '';
+        foreach ($opfXml->manifest->item as $item) {
+            if ((string)$item['id'] === $coverId) {
+                $coverPath = dirname($opfPath) . '/' . (string)$item['href'];
+                break;
+            }
+        }
+
+        if ($coverPath && $zip->locateName($coverPath)) {
+            $cover = $zip->getFromName($coverPath);
+        }
+
+        $zip->close();
+
+        // Autor speichern oder holen
+        $autor_id = getOrInsertautor($pdo, $autor);
+
+        // Zielpfad aufbauen
+        $autorVerzeichnis = preg_replace('/[^a-zA-Z0-9_]/', '', str_replace(' ', '', $autor));
+        $zielOrdner = rtrim($zielVerzeichnis, '/') . '/' . $autorVerzeichnis;
+        if (!is_dir($zielOrdner)) {
+            mkdir($zielOrdner, 0775, true);
+        }
+
+        $zielDateiname = $autorVerzeichnis . '/' . str_replace(' ', '_', $autor) . '-' . str_pad($counter['epubs'] + 1, 3, '0', STR_PAD_LEFT) . '_-_' . str_replace(' ', '_', $title) . '.epub';
+        $zielPfad = rtrim($zielVerzeichnis, '/') . '/' . $zielDateiname;
+
+        // Datei verschieben
+        if (@rename($filePath, $zielPfad)) {
+            $_SESSION['epubs'][] = "Verschoben nach: $zielPfad";
+            $counter['epubs']++;
+        } else {
+            $_SESSION['errors'][] = "Fehler beim Verschieben: $filePath ➜ $zielPfad";
+            $counter['errors']++;
+            return;
+        }
+
+        // Eintrag vorbereiten
+        $data = [
+            'title' => $title,
+            'autor_id' => $autor_id,
+            'isbn' => $isbn,
+            'beschreibung' => $beschreibung,
+            'sprache' => $sprache,
+            'ausgabe' => '',
+            'label' => '',
+            'herausgeber' => '',
+            'date' => $veroeffentlichung,
+            'eingetragen_am' => date('Y-m-d'),
+            'pfad' => $zielDateiname,
+            'cover' => $cover
+        ];
+
+        insertEpubMetadata($pdo, $data);
+
+    } else {
+        $_SESSION['errors'][] = "Datei konnte nicht geöffnet werden: $filePath";
+        $counter['errors']++;
+    }
+}
+
+
+
+
+function generateFilename($autor, $title) {
+    $filename = preg_replace('/[^A-Za-zÄÖÜäöü0-9.-]/u', '_', "$autor-$title.epub");
+    return str_replace(' ', '', $filename);
+}
+
+
+function insertEpubMetadata($pdo, $data) {
+    $stmt = $pdo->prepare("INSERT INTO ebooks.tab_ebooks
+        (titel, fs_autor, isbn, beschreibung, sprache, ausgabe, label, herausgeber, veroeffentlichung, eingetragen_am, pfad, cover)
+        VALUES (:title, :autor_id, :isbn, :beschreibung, :sprache, :ausgabe, :label, :herausgeber, :veroeffentlichung, :eingetragen_am, :pfad, :cover)");
+    $stmt->execute($data);
+}

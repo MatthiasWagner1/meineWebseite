@@ -1,0 +1,81 @@
+<?php
+
+
+
+// Funktion zum Durchsuchen von Verzeichnissen und Unterordnern
+function scanDirectory($dir) {
+    $files = array_diff(scandir($dir), array('.', '..'));
+
+    foreach($files as $file) {
+        $path = $dir.'/'.$file;
+        if(is_dir($path)) {
+            scanDirectory($path);
+        } else {
+            // Überprüfen, ob die Datei eine EPub-Datei ist
+            if(pathinfo($path, PATHINFO_EXTENSION) === 'epub') {
+                processEPub($path);
+            }
+        }
+    }
+}
+
+// Funktion zum Verarbeiten einer EPub-Datei und Speichern der Metadaten in der SQL-Datenbank
+function processEPub($filePath) {
+    // Öffnen der EPub-Datei
+    $epub = new ZipArchive;
+    if ($epub->open($filePath) === true) {
+        // echo 'File: '.$filePath.'<br>';
+        // Lesen der Metadaten aus der EPub-Datei
+        $metadata = $epub->getFromName('META-INF/container.xml');
+        $metadataXml = new SimpleXMLElement($metadata);
+        $opfFile = $metadataXml->rootfiles->rootfile['full-path'];
+
+        $opfContent = $epub->getFromName($opfFile);
+        $opfXml = new SimpleXMLElement($opfContent);
+
+
+// Definieren des Namespace
+$namespace = 'http://example.com/namespace'; // Beispiel-Namespace-URL
+
+// Verwenden des Namespace bei der XPath-Abfrage
+$opfXml->registerXPathNamespace('ns', $namespace);
+
+// Beispiel XPath-Abfrage unter Verwendung des Namespace
+$elements = $opfXml->xpath('//ns:element');
+
+// Zugriff auf die Elemente im Namespace
+foreach ($elements as $element) {
+    // Code zur Verarbeitung der Elemente
+}
+
+        // Weitere Metadaten, die Sie benötigen
+
+        // Extrahieren der benötigten Metadaten
+$title = (string) $opfXml->metadata->dcTitle;
+$author = (string) $opfXml->metadata->dcCreator;
+$publisher = (string) $opfXml->metadata->dcPublisher;
+$description = (string) $opfXml->metadata->dcDescription;
+
+// Ausgabe der Metadaten
+echo "Titel: " . $title . "\n";
+echo "Autor: " . $author . "\n";
+echo "Verlag: " . $publisher . "\n";
+echo "Beschreibung: " . $description . "\n";
+
+
+exit;
+
+
+
+        // Speichern der Metadaten in der SQL-Datenbank
+        // $pdo = new PDO('mysql:host=localhost;dbname=your_database', 'username', 'password');
+        // $stmt = $pdo->prepare("INSERT INTO ebooks (title, author, publisher, description) VALUES (?, ?, ?, ?)");
+        // $stmt->execute([$title, $author, $publisher, $description]);
+
+        $epub->close();
+    }
+}
+
+// Verzeichnis, das durchsucht werden soll
+$directory = '/var/www/html/ebooks';
+scanDirectory($directory);
