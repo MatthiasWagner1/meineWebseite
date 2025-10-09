@@ -1,0 +1,324 @@
+    /* das ist der body */
+    body {
+        width: 100%;
+        font-size: 1.0em;
+        color: grey;
+        background-color: lightgrey;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+
+    /* Hauptseite  */
+
+    /* das ist der main bereich */
+
+    main {
+        width: 88%;
+        margin: auto;
+        margin-top: 55px;
+        background: white;
+        padding-top: 10px;
+        padding-left: 1%;
+        padding-right: 1%;
+      }
+  
+      main p {
+          font-size: 1.5em;
+      }
+  
+      main span {
+          font-size: 1.0em;
+          width: 100%;
+          /* must have this set */
+      }
+
+    grad {
+    color: black;
+    /* Farbe schwarz */
+    font-size: 36pt;
+    /* Größe    */
+    margin: 1pt;
+    text-decoration:solid;
+    }
+
+    saldo {
+        color: black;
+        /* Farbe schwarz */
+        font-size: 22pt;
+        /* Größe    */
+        margin: 1pt;
+        text-decoration:solid;
+    }
+
+    iban {
+        color: grey;
+        /* Farbe schwarz */
+        font-size: 11pt;
+        /* Größe    */
+        margin: 0pt;
+        text-decoration:solid;
+    }
+
+
+    /* Das ist die Tabelle Heimnetz Hauptseite. wird mit: <div class = "heimnetz" > definiert*/
+
+    .heimnetz {
+
+        display: flex;
+        justify-content: flex-start; /* links angeordnet */
+        gap: 10px; /* Abstand der Box */
+        background-color: white;
+        height: 100%;  
+        width: 100%;
+        margin: 0;
+    }
+
+    /* und das sind die einzelne Boxen */
+
+    .heimnetz > .container{
+        height: 760px;  
+        width: 350px;
+        background-color: lightgrey;
+        margin: 10px;
+        padding: 2px;
+        border: 1px solid black;
+        font-size: 13pt;
+        line-height: 23px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .heimnetz > .container td {
+        border: 1px solid black;
+        
+    }
+
+/* das sind die Boxen Startseite */
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start; /* links angeordnet */
+    gap: 10px; /* Abstand der Box */
+    background-color: white;
+    background-color: white;
+    height: 100%;  
+    width: 100%;
+    border: 0px solid black;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  
+  .flex-container > div {
+      height: 120px;  
+      width: 215px;
+      background-color: lightgrey;
+      margin: 10x;
+      padding: 2px;
+
+      border: 1px solid black;
+      font-size: 13pt;
+      line-height: 23px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+  }
+
+
+
+
+    /* Das ist das Heimnetz Formular */
+
+    .heimnetz_formular {
+        font-size: 24px;
+        height: 500px;
+        width: 450px;
+        color: black;
+        background-color: lightgrey;
+        border: 0px solid black;    
+        border-radius: 0px;
+        border-top-width: 10px;
+        border-top-style: solid;
+        border-top-color: #088A08;
+        vertical-align: top;
+        padding-left: 3px;
+        padding-top: 3px;
+    }
+
+    .heimnetz_formular input {
+        font-size: 18px;
+        width: 250px;
+    }
+
+    .heimnetz_formular textarea {
+        font-size: 16px;
+        height: 100px;
+        width: 250px;
+    }
+
+    /* Links werden nicht unterstrichen */
+    a {
+        text-decoration: none;
+        color: #2E2E2E;
+        /* dunkles grau */
+    }
+
+/* das ist der Balken oben mit den Menüs*/
+header {
+    display: block;
+        width: 90%;
+        margin: auto;
+        margin-top: 40px;
+        }
+
+header h1 {
+    font-size: 200%;
+}
+
+header h1 a {
+    display: block;
+    color: white;
+    }
+
+header h1 a:visite {
+    color: white;
+    }
+
+header h1 span {
+    font-size: 50%;
+    }
+
+
+    h5 {
+        color: black;
+        /* Farbe schwarz */
+        font-size: 16pt;
+        /* Größe    */
+        margin: 1pt;
+        margin-top: 3pt;
+        text-decoration: underline;
+    }
+
+    /* das ist die schwarze Box oben links */
+
+    .ribbon {
+        position: relative;
+        background: #333;
+        text-align: center;
+        width: 25%;
+        /* Breite des Bandes*/
+        padding: 20px 0 20px 0;
+        /* Höhe des Bandes*/
+        margin-top: -130px;
+        margin-left: -20px;
+    }
+    /* Hauptmenü oben   */
+
+    nav ul {
+        position: relative;
+        background-color: #088A08;
+        /* blau*/
+        margin-top: 10px;
+        text-align: right;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav li {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: block;
+        width: 5em;
+        margin: 1em 0 1em 0em;
+        padding: 0.4em;
+        text-decoration: none;
+        font-weight: normal;
+        border: 0px solid blue;
+        border-radius: 0px 0px 0px 0;
+        box-shadow: 0px 0px 0px white inset;
+        color: #d5d5d5;
+        /*grau wie background body*/
+    }
+
+    nav a:focus,
+    nav a:hover {
+        color: darkgray;
+    }
+
+    nav a:active {
+        color: red;
+    }
+
+
+/* das ist die Tabelle für die Ausgabe der Temperaturdaten*/
+
+    table, th, td {
+        border-collapse: collapse;
+        border: 1px solid black;
+        
+
+
+
+    } 
+
+    th, td {
+        padding: 2px;
+        font-size: 1.0em;
+    }
+
+    td {
+        text-align: left;
+
+
+
+    }
+
+
+    /* das ist die Tabelle */
+
+    .privat {
+        /* border-collapse: collapse;  Rahmen zusammenfallend separate wäre getrennt */
+        font-size: 1.0em;
+        width: 100%;
+        text-align: left;
+    }
+   
+    /* das ist die Kopfzeile der Tabelle */
+
+    main thead {
+        padding: 2px;
+        background: #088A08;
+        color: white;
+        text-align: left;
+    }
+
+    .privat tbody tr:nth-child(even) {
+        /*  jede 2. Reihe grauer Hintergrund ZEBRA */
+        /* background-color: #ccc;*/
+        background-color: #F0F0F0;
+    }
+    /* das ist die Fusszeile */
+
+    footer {
+        bottom: 0;
+        width: 90%;
+        background: #fff;
+        margin: 5px 0 0 5%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top-width: 3px;
+
+        border-top-style: solid;
+        border-top-color: #088A08;
+        box-shadow: 0 0px 80px 0 rgba(0, 0, 0, 0.0) inset, 0 3px 1px rgba(0, 0, 0, 0.15);
+        /*-webkit-box-shadow: 0 0 80px rgba(0,0,0,0.0) inset, 0 3px 1px rgba(0,0,0,0.15); // Schatten unter der Box*/
+    }
+
+

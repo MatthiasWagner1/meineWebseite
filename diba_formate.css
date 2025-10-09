@@ -1,0 +1,339 @@
+
+    /* das ist der body */
+    body {
+        width: 100%;
+        font-size: 1.0em;
+        color: #535353;
+        background-color: lightgrey;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+
+    /* Hauptseite  */
+
+    /* das ist der main bereich */
+
+    main {
+      width: 88%;
+      margin: auto;
+      margin-top: 55px;
+      background: white;
+      padding-top: 10px;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+
+    main p {
+        font-size: 1.5em;
+    }
+
+    main span {
+        font-size: 1.0em;
+        width: 100%;
+        /* must have this set */
+    }
+
+    /* Links werden nicht unterstrichen */
+a {
+        text-decoration: none;
+        color: #2E2E2E;
+    }
+
+    /* das ist die Tabelle */
+
+    /* das ist die Kopfzeile der Tabelle */
+.privat th {
+            background: rgb(255,98,0,255);
+            text-align: left;
+            color: white;
+        }
+.privat td {
+            border: 1px black solid;
+            padding: 2px 5px 2px 2px;
+        }
+.privat tbody tr:nth-child(even) {
+            /*  jede 2. Reihe grauer Hintergrund ZEBRA */
+            /* background-color: #ccc;*/
+            background-color: #F0F0F0;
+        }
+
+    /* das ist die Filter Tabelle */
+
+.filter table {
+    border-collapse: separate;
+    border-spacing: 3px;
+}
+    
+.filter td {
+        border: 1px black solid;
+        padding: 5px;
+
+      }
+
+
+.filter tbody tr:nth-child(even) {
+    /*  jede 2. Reihe grauer Hintergrund ZEBRA */
+    /* background-color: #ccc;*/
+    background-color: #F0F0F0;
+    }
+
+
+    /* das ist Button anzeige */
+
+.buttons_suche {
+    /*background-color: burlywood;*/
+    margin-left: 1px;
+    width: 180px; /* Breite des Buttons */
+    height: 30px; /* Höhe des Buttons */
+    font-size: 1.0em;
+    border: 1px solid #aaa; /* Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    display: inline; /* Darstellung als Block-Element */
+}
+
+.buttons_suche:hover {
+    background-color: white;
+}
+
+.buttons_suche:focus {
+    color: black;
+    background-color: lightgrey;
+}
+
+    /* Das ist das Diba Formular */
+
+    .diba_formular {
+        font-size: 24px;
+        height: 600px;
+        width: 650px;
+        color: black;
+        background-color: rgb(211, 211, 211);
+        border: 1px solid black;    
+        border-radius: 0px;
+        border-top-width: 10px;
+        border-top-style: solid;
+        border-top-color: rgb(255,98,0,255);
+        vertical-align: top;
+        padding-left: 3px;
+        padding-top: 3px;
+    }
+
+    .diba_formular input {
+        font-size: 18px;
+        width: 100px;
+    }
+
+    .diba_formular textarea {
+        font-size: 16px;
+        height: 60px;
+        width: 400px;
+    }
+
+ .diba_formular select {
+            font-size: 18px;
+    }
+
+
+
+    /* Das ist das Formular für erweiteret Suche */
+
+    .diba_formular1 {
+        font-size: 1.0em;;
+        height: 600px;
+        width: 650px;
+        color: black;
+        background-color: rgb(211, 211, 211);
+        border: 1px solid black;
+        border-radius: 0px;
+        border-top-width: 10px;
+        border-top-style: solid;
+        border-top-color: rgb(255,98,0,255);
+        vertical-align: top;
+        padding-left: 3px;
+        padding-top: 3px;
+    }
+
+
+
+ /* das sind die Grafiken als link */
+
+    .flex { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
+
+
+
+/* das sind die Boxen Startseite */
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start; /* links angeordnet */
+    gap: 10px; /* Abstand der Box */
+    background-color: white;
+    background-color: white;
+    height: 100%;  
+    width: 100%;
+    border: 0px solid black;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  
+  .flex-container > div {
+      height: 120px;  
+      width: 215px;
+      background-color: lightgrey;
+      margin: 10x;
+      padding: 2px;
+
+      border: 1px solid black;
+      font-size: 13pt;
+      line-height: 23px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      
+  }
+
+  saldo {
+    color: black;
+    /* Farbe schwarz */
+    font-size: 22pt;
+    /* Größe    */
+    margin: 1pt;
+    text-decoration:solid;
+}
+
+iban {
+    color: grey;
+    /* Farbe schwarz */
+    font-size: 11pt;
+    /* Größe    */
+    margin: 0pt;
+    text-decoration:solid;
+}
+
+
+/* ============================================================================ */
+/* ab hier die Daten für den Header*/
+/* ============================================================================ */
+
+    /* das ist der Balken oben mit den Menüs*/
+header {
+    display: block;
+        width: 90%;
+        margin: auto;
+        margin-top: 40px;
+        }
+
+header h1 {
+    font-size: 200%;
+}
+
+header h1 a {
+    display: block;
+    color: white;
+    }
+
+header h1 a:visite {
+    color: white;
+    }
+
+header h1 span {
+    font-size: 50%;
+    }
+
+
+    h5 {
+        color: black;
+        /* Farbe schwarz */
+        font-size: 16pt;
+        /* Größe    */
+        margin: 1pt;
+        margin-top: 3pt;
+        text-decoration: underline;
+    }
+
+    h4 {
+        color: black;
+        /* Farbe schwarz */
+        font-size: 24pt;
+        /* Größe    */
+        margin: 1pt;
+        margin-top: 3pt;
+
+    }
+
+
+
+    /* das ist die schwarze Box oben links */
+
+    .ribbon {
+        position: relative;
+        background: #333;
+        text-align: center;
+        width: 25%;
+        /* Breite des Bandes*/
+        padding: 20px 0 20px 0;
+        /* Höhe des Bandes*/
+        margin-top: -130px;
+        margin-left: -20px;
+    }
+    /* Hauptmenü oben   */
+
+    nav ul {
+        position: relative;
+        background-color: rgb(255,98,0,255); /* original DiBa orange */
+
+        margin-top: 10px;
+        text-align: right;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav li {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: block;
+        width: 5em;
+        margin: 1em 0 1em 0em;
+        padding: 0.4em;
+        text-decoration: none;
+        font-weight: normal;
+        border: 0px solid blue;
+        border-radius: 0px 0px 0px 0;
+        box-shadow: 0px 0px 0px white inset;
+        color: white;
+        /*grau wie background body*/
+    }
+
+    nav a:focus,
+    nav a:hover {
+        color: darkgray;
+    }
+
+    nav a:active {
+        color: red;
+    }
+
+        footer {
+        bottom: 0;
+        width: 90%;
+        background: #fff;
+        margin: 5px 0 0 5%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top-width: 3px;
+
+        border-top-style: solid;
+        border-top-color: rgb(255,98,0,255);
+        box-shadow: 0 0px 80px 0 rgba(0, 0, 0, 0.0) inset, 0 3px 1px rgba(0, 0, 0, 0.15);
+        /*-webkit-box-shadow: 0 0 80px rgba(0,0,0,0.0) inset, 0 3px 1px rgba(0,0,0,0.15); // Schatten unter der Box*/
+    }
