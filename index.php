@@ -18,18 +18,18 @@
 -->
 <img class='bild' alt='Diepoltsdorf' src='img/bild4.png'>
 
-  <nav>
-    <ul>
-      <li><a href="index.php">Startseite</a></li>
-      <li><a href="html/filme.php">Filme</a></li>
-      <li><a href="html/dinge.php">Dinge</a></li>
-      <li><a href="html/projekte.php">Projekte</a></li>
-      <li><a href="html/buecher.php">Bücher</a></li>
-      <li><a href="html/musik.php">Musik</a></li>
-      <li><a href="html/heimnetz.php">Heimnetz</a></li>
-    </ul>
+<nav>
+  <ul>
+    <li><a href="index.php">Startseite</a></li>
+    <li><a href="filme/filme.php">Filme</a></li>
+    <li><a href="dinge/dinge.php">Dinge</a></li>
+    <li><a href="projekte/projekte.php">Projekte</a></li>
+    <li><a href="ebooks/ebook.php">Bücher</a></li>
+    <li><a href="musik/musik.php">Musik</a></li>
+    <li><a href="heimnetz/heimnetz.php">Heimnetz</a></li>
+  </ul>
+</nav>
 
-  </nav>
 	<!-- <a id="navlink" title="zum Navigationsmenü" href="#navigation">☰</a>  -->
   <h1 class="ribbon">
    <!-- INTRANET<br/><span>Matthias Wagner</span>-->

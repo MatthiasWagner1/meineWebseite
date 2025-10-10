@@ -10,7 +10,7 @@
 
 <header>
   <?php
-  include "header.php"; // die Fusszeile einbinden
+  include "../header.php"; // die Fusszeile einbinden
   ?>
 </header>
 

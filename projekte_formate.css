@@ -1,0 +1,399 @@
+    /* das ist der body */
+    body {
+        width: 100%;
+        font-size: 1.0em;
+        color: #535353;
+        background-color: lightgrey;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+    }
+
+    /* Hauptseite  */
+
+    h5 {
+        color: black;
+        /* Farbe schwarz */
+        font-size: 16pt;
+        /* Größe    */
+        margin: 3pt;
+        text-decoration: underline;
+    }
+
+    #buttons {
+        background-color: lightgrey;
+        margin-left: 0%;
+        margin-top: 0%;
+        line-height: 2.5;
+    }
+
+    #suche {
+      padding: 5px;
+      width: 80%;
+
+    	border-radius: 0.5em;
+    	font-size: 1.1em;
+    	transition: width 0.5s ease-in-out;
+      margin-bottom: 5px;
+    }
+    #buttons_suche {
+        /*background-color: burlywood;*/
+        margin-left: 5px;
+        padding-right: 5px;
+        width: 180px; /* Breite des Buttons */
+        height: 30px; /* Höhe des Buttons */
+        font-size: 1.0em;
+        border: 1px solid #aaa; /* Rahmen */
+        border-radius: 5px; /* Abgerundete Ecken */
+        display: inline; /* Darstellung als Block-Element */
+    }
+
+    #buttons_suche:hover {
+      background-color: green;
+    }
+
+    #buttons_suche:focus {
+      color: black;
+      background-color: lightgrey;
+    }
+
+    #buttons_film {
+      /*background-color: burlywood;*/
+      width: 200px; /* Breite des Buttons */
+      height: 30px; /* Höhe des Buttons */
+      font-size: 100%;
+      border: 1px solid #aaa; /* Rahmen */
+      border-radius: 5px; /* Abgerundete Ecken */
+      display: inline; /* Darstellung als Block-Element */
+    }
+
+    #buttons_film:hover {
+      background-color: white;
+    }
+
+    #buttons_film:focus {
+      color: black;
+      background-color: lightgrey;
+    }
+
+    /* Hier kommen die div von filme.php */
+    #linksoben {
+        background-color: lightgrey;
+        float: left;
+        width: 32%;
+        height: 380px;
+        border: 1px solid grey;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    #mitteoben {
+        background-color: lightgrey;
+        float: left;
+        width: 32%;
+        height: 380px;
+        border: 1px solid grey;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    #rechtsoben {
+        background-color: lightgrey;
+        float: left;
+        width: 32%;
+        height: 380px;
+        border: 1px solid grey;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    #linksunten {
+        background-color: lightgrey;
+        float: left;
+        width: 32%;
+        height: 380px;
+        border: 1px solid grey;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    #mitteunten {
+        background-color: lightgrey;
+        float: left;
+        width: 32%;
+        height: 380px;
+        border: 1px solid grey;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    #rechtsunten {
+        background-color: lightgrey;
+        float: left;
+        width: 32%;
+        height: 380px;
+        border: 1px solid grey;
+        margin-top: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+    }
+
+    /* Das ist die Anzahl der Treffer */
+
+    #treffer {
+        position: absolute;
+        font-size: 150%;
+        top: 335px;
+        width: 80%;
+        height: 30px;
+        margin-left: 5%;
+
+    }
+
+    /* Das ist das Projekte Formular */
+
+    .projekte_formular {
+        font-size: 24px%;
+        position: relative;
+        width: 100%;
+        color: black;
+        background-color: lightgrey;
+        border: 0px solid black;
+        border-top-width: 10px;
+        border-top-style: solid;
+        border-top-color: #8A0808;
+        padding-left: 3px;
+        padding-top: 3px;
+    }
+    /* Das sind die Checkboxen im Film Formular */
+
+    .genre {
+        font-size: 24px;
+        position: absolute;
+        left: 750px;
+        top: 5px;
+        width: 340px;
+        height: 300px;
+        background-color: light-grey;
+    }
+    /* hier wird die Größe der Checkbox bestimmt - Chrome */
+    .genre input {
+        width: 20px;
+        height: 20px;
+        vertical-align:middle;
+    }
+
+    .projekte_formular input {
+        font-size: 18px;
+    }
+
+    /* Das ist für das Textfeld im Formular */
+
+    textarea {
+    	caret-color: red;
+    	width: 95%;
+    	height: 25em;
+    	border: 1px solid #cccccc;
+    	padding: 0.5em;
+    	font-size: 16px;
+      resize: none;
+    }
+    .projekte_formular textarea:focus {
+          background: #FFC;
+    }
+
+    /* das ist das Bewertungssystem mit 5 Sternen im Formular */
+    .rating {
+        overflow: hidden;
+        vertical-align: bottom;
+        display: inline-block;
+        width: auto;
+        height: 30px;
+    }
+
+    .rating>input {
+        opacity: 0;
+        margin-right: -100%;
+    }
+
+    .rating>label {
+        position: relative;
+        display: block;
+        float: right;
+        background: url('img/24px-Empty_Star.svg.png');
+        background-size: 30px 30px;
+    }
+
+    .rating>label:before {
+        display: block;
+        opacity: 0;
+        content: '';
+        width: 30px;
+        height: 30px;
+        background: url('img/24px-Full_Star_Blue.svg.png');
+        background-size: 30px 30px;
+        transition: opacity 0.2s linear;
+    }
+
+    .rating>label:hover:before,
+    .rating>label:hover~label:before,
+    .rating:not(:hover)> :checked~label:before {
+        opacity: 1;
+    }
+    /* Links werden nicht unterstrichen */
+
+    a {
+        text-decoration: none;
+        color: #2E2E2E;
+        /* dunkles grau */
+    }
+    /* Das ist das Bild im Banner der Hauptseite */
+
+    .bild {
+        position: relative;
+        top: 0px;
+        /*display: block;*/
+        margin: auto;
+        width: 100%;
+    }
+
+    header {
+        width: 90%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    header h1 {
+        font-size: 200%;
+    }
+
+    header h1 a {
+        display: block;
+        color: white;
+    }
+
+    header h1 a:visite {
+        color: white;
+    }
+
+    header h1 span {
+        font-size: 50%;
+    }
+    /* das ist die schwarze Box oben links */
+
+    .ribbon {
+        position: relative;
+        background: #333;
+        text-align: center;
+        width: 25%;
+        /* Breite des Bandes*/
+        padding: 20px 0 20px 0;
+        /* Höhe des Bandes*/
+        margin-top: -130px;
+        margin-left: -20px;
+    }
+    /* Hauptmenü oben   */
+
+    nav ul {
+        position: relative;
+        background-color: #8A0808;
+        /* blau*/
+        margin-top: 10px;
+        text-align: right;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav li {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: block;
+        width: 5em;
+        margin: 1em 0 1em 0em;
+        padding: 0.4em;
+        text-decoration: none;
+        font-weight: normal;
+        border: 0px solid blue;
+        border-radius: 0px 0px 0px 0;
+        box-shadow: 0px 0px 0px white inset;
+        color: #d5d5d5;
+        /*grau wie background body*/
+    }
+
+    nav a:focus,
+    nav a:hover {
+        color: darkgray;
+    }
+
+    nav a:active {
+        color: lightcoral;
+    }
+    /* das ist der main bereich */
+
+    main {
+      width: 88%;
+      margin: auto;
+      margin-top: 55px;
+      background: white;
+      padding-top: 10px;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+
+    main p {
+        font-size: 1.5em;
+    }
+
+    main span {
+        font-size: 1.0em;
+        width: 100%;
+        /* must have this set */
+    }
+    /* das ist die Tabelle */
+
+    .privat {
+        /* border-collapse: collapse;  Rahmen zusammenfallend separate wäre getrennt */
+        border: 1px black solid;
+        padding: 2px 2px 2px 2px;
+        font-size: 1.1em;
+        width: 100%;
+
+    }
+    /* das ist die Kopfzeile der Tabelle */
+
+    main thead {
+        background: #8A0808;
+        color: white;
+    }
+
+    .privat tbody tr:nth-child(even) {
+        /*  jede 2. Reihe grauer Hintergrund ZEBRA */
+        /* background-color: #ccc;*/
+        background-color: #F0F0F0;
+    }
+    /* das ist die Fusszeile */
+
+    footer {
+        bottom: 0;
+        width: 90%;
+        background: #fff;
+        margin: 5px 0 0 5%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top-width: 3px;
+
+        border-top-style: solid;
+        border-top-color: #8A0808;
+        box-shadow: 0 0px 80px 0 rgba(0, 0, 0, 0.0) inset, 0 3px 1px rgba(0, 0, 0, 0.15);
+        /*-webkit-box-shadow: 0 0 80px rgba(0,0,0,0.0) inset, 0 3px 1px rgba(0,0,0,0.15); // Schatten unter der Box*/
+    }

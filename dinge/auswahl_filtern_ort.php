@@ -11,7 +11,7 @@
   <?php
     // error_reporting(level -1);
     error_reporting(-1);
-    include "header.php"; // die Kopfzeile einbinden
+    include "../header.php"; // die Kopfzeile einbinden
   ?>
 </header>
 <!-- ab hier kommt nur noch Text -->

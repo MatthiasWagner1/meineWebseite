@@ -14,7 +14,7 @@
 
 <header>
   <?php
-  include "header.php"; // die Kopfzeile einbinden
+  include "../header.php"; // die Kopfzeile einbinden
   ?>
 </header>
 

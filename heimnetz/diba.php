@@ -11,7 +11,7 @@
 <body>
   <header>
     <?php
-    include "header.php"; // die Menüs einbinden
+    include "../header.php"; // die Menüs einbinden
     ?>
   </header>
 
