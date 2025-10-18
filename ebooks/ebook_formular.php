@@ -1,5 +1,5 @@
 <?php
-	include "dinge_verbinden.php"; // db wird geöffnet
+	include "ebooks_verbinden.php"; // db wird geöffnet
 ?>
 
 <!doctype html>

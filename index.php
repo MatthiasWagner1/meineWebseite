@@ -51,9 +51,8 @@
   $temperatur = substr($letzte_zeile,-6);
 
   echo '<h2>';
-  echo $letzte_zeile.' <br>';
-  echo $datum.' <br>';
-  echo $zeit.' '.$topic.' meldet: '.$temperatur.' Grad';
+  echo "hier passiert gerade nichts...".' <br>';
+
   echo '</h2>';
 ?>
 
