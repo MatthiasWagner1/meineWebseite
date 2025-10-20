@@ -66,21 +66,25 @@ wie
 */
 
 
- function ausgabe($erg)
- {
-  echo 	'<table class="privat">';
-  //echo 	'<thead><tr><td>ID</td><td>Autor</td><td>Titel</td></tr></thead>';
-	echo	'<tbody>';
-	while($data = $erg->fetch()) {
-		$id=$data['id_autor'];
-       
-		//echo '<td><a href=ebook_formular.php?ID='.$id.'>'. $data['id_autor'] . '</a></td>';
-    echo '<td><a href=ebook_autor_formular.php?ID='.$id.'>'. $data['name'] . '</a></td>';
-    echo '<td><a href=ebook_autor_formular.php?ID='.$id.'>'. $data['vorname'] . '</a></td>';
-    //echo '<td><a href=ebook_autor_formular.php?ID='.$id_ebooks.'>'. $data['titel'] . '</a></td>';
+function ausgabe($erg, $spalten = 5)
+{
+    echo '<table class="namensliste-table"><tr>';
+    $count = 0;
 
-		echo '</tr>';
-	}
+    while($data = $erg->fetch()) {
+        $id = $data['id_autor'];
+        $name = $data['name'];
+        $vorname = $data['vorname'];
+
+        echo '<td><a href="ebook_autor_formular.php?ID='.$id.'">'.$name.' / '.$vorname.'</a></td>';
+
+        $count++;
+        if ($count % $spalten == 0) {
+            echo '</tr><tr>'; // neue Zeile nach X Spalten
+        }
+    }
+
+    echo '</tr></table>';
 }
 
 

@@ -1,23 +1,11 @@
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
-include "ebooks_verbinden.php"; // DB öffnen
-
-// Variablen sauber setzen
-$eingabe = $_POST['suche'] ?? '';
-$i = $_POST['i'] ?? $_GET['i'] ?? null;
-$treffer = 0;
-
-?>
-
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0;">
-<link rel="stylesheet" href="../ebook_formate.css">
-<title>Bücher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+  
+  <link rel="stylesheet" href="../ebook_formate.css">
+  <title>Bücher</title>
 </head>
 <body>
 
@@ -26,101 +14,113 @@ $treffer = 0;
 </header>
 
 <main>
-<h1>eBooks</h1>
 
+<h1>eBooks</h1>
 <form>
-    <input type="submit" formaction="ebook-import.php" value="eBook Import">
-    <input type="submit" formaction="ebook_autor.php" value="Liste Autoren">
+<input type="Submit" name="" formaction="ebook-import.php" value="eBook Import">
+<input type="Submit" name="" formaction="ebook_autor.php" value="Liste Autoren">
 </form>
 <br><br>
 
 Suchbegriff eingeben:
+
 <div id="suche">
-<form method="post" action="ebook.php">
-    <label for="suche"></label>
-    <input id="suche" name="suche" value="<?php echo htmlspecialchars($eingabe); ?>">
-    <button id="buttons_suche" type="submit" name="i" value="1">finden</button>
-    <br><br>
-    <input id="buttons_suche" type="submit" name="i" value="2" value="nach eBooks">
-    <input id="buttons_suche" type="submit" name="i" value="3" value="nach Autoren">
+<form method='post' action="ebook.php?i=1">
+<label for='suche'></label>
+<input id='suche' name='suche' value='<?php echo $_POST['suche'] ?? ''; ?>'>
+<button id="buttons_suche">finden</button>
+<br><br>
+<input id="buttons_suche" type="Submit" name="" formaction="ebook.php?i=2" value="nach eBooks">
+<input id="buttons_suche" type="Submit" name="" formaction="ebook.php?i=3" value="nach Autoren">
 </form>
-</div>
 <br><br>
 
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
-// Suchbegriffe vorbereiten
-$suche = explode(" ", $eingabe);
-if (!isset($suche[1])) {
-    $suche[1] = substr($suche[0], 0, 1);
-}
+include "ebooks_verbinden.php";
 
-// Query vorbereiten
-$erg = "SELECT * FROM tab_ebooks
-        INNER JOIN tab_autor ON tab_ebooks.fs_autor = tab_autor.id_autor
-        ORDER BY tab_ebooks.id DESC";
-$erg = $pdo->prepare($erg);
-$erg->execute();
+$eingabe = $_POST['suche'] ?? '';
+$i = $_GET['i'] ?? '';
+$treffer = 0;
 
-// Tabelle starten
-echo '<table class="privat">';
-echo '<thead><tr><td>ID</td><td>Titel</td><td>Autor</td><td>Veröffentlicht</td><td>ISBN</td></tr></thead>';
-echo '<tbody>';
-
-// Durch die Datensätze loopen
-while($data = $erg->fetch()) {
-
-    $match = false;
-    switch ($i) {
-        case 1: // Titel + Autor
-            $name = $data['titel'] . $data['name'];
-            $match = stripos($name, $suche[0]) !== false && stripos($name, $suche[1]) !== false;
-            break;
-        case 2: // nur Titel
-            $name = $data['titel'];
-            $match = stripos($name, $suche[0]) !== false && stripos($name, $suche[1]) !== false;
-            break;
-        case 3: // nur Autor
-            $name = $data['name'];
-            $match = stripos($name, $suche[0]) !== false && stripos($name, $suche[1]) !== false;
-            break;
-        default: // Standard: 20 neueste
-            $match = true;
-            break;
-    }
-
-    if ($match) {
-        ausgabe(
-            $data['id'],
-            $data['id_autor'],
-            $data['titel'],
-            $data['name'],
-            $data['date'],
-            $data['isbn']
-        );
-        $treffer++;
-    }
-}
-
-echo '</tbody></table>';
-
-echo "<h3>Treffer: $treffer</h3>";
-
-include "../footer.php";
-
-// Funktion zur Tabellenzeile
-function ausgabe($id, $id_autor, $titel, $autor, $date, $isbn)
-{
+function ausgabe($id, $id_autor, $titel, $name, $vorname, $date, $isbn) {
     echo '<tr class="privat">';
-    echo '<td><a href="ebook_formular.php?ID='.$id.'">'.$id.'</a></td>';
-    echo '<td><a href="ebook_formular.php?ID='.$id.'">'.$titel.'</a></td>';
-    echo '<td><a href="ebook_autor_formular.php?ID='.$id_autor.'">'.$autor.'</a></td>';
-    echo '<td>'.$date.'</td>';
-    echo '<td>'.$isbn.'</td>';
+    echo '<td><a href=ebook_formular.php?ID='.$id.'>'. $id . '</a></td>';
+    echo '<td><a href=ebook_formular.php?ID='.$id.'>'. $titel . '</a></td>';
+    echo '<td><a href=ebook_autor_formular.php?ID='.$id_autor.'>'. $name . '</a></td>';
+    echo '<td><a href=ebook_autor_formular.php?ID='.$id_autor.'>'. $vorname . '</a></td>';
+    echo '<td>' . $date . '</td>';
+    //echo '<td>' . $isbn . '</td>';
+    echo '<td>' . $id_autor . '</td>';
     echo '</tr>';
 }
 
+// *** Anzeige 20 neueste, wenn kein Suchbegriff ***
+if (empty($eingabe) && empty($i)) {
+    echo "<h3>Die 20 neuesten eBooks.</h3>";
+    $sql = "SELECT * FROM tab_ebooks
+            INNER JOIN tab_autor ON tab_ebooks.fs_autor = tab_autor.id_autor
+            ORDER BY tab_ebooks.id DESC
+            LIMIT 20";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    echo '<table class="privat">';
+    echo '<thead><tr><td>ID</td><td>Titel</td><td>Name</td><td>Vorname</td><td>Veröffentlicht</td><td>ISBN</td></tr></thead>';
+    echo '<tbody>';
+
+    while ($data = $stmt->fetch()) {
+        ausgabe($data['id'], $data['id_autor'], $data['titel'], $data['name'], $data['vorname'], $data['date'], $data['isbn']);
+    }
+
+    echo '</tbody></table>';
+} else {
+    // *** Suche oder spezielle Anzeige ***
+    $suche = explode(" ", $eingabe);
+    if (empty($suche[1])) {
+        $suche[1] = substr($suche[0], 0, 1);
+    }
+
+    $sql = "SELECT * FROM tab_ebooks
+            INNER JOIN tab_autor ON tab_ebooks.fs_autor = tab_autor.id_autor
+            ORDER BY date DESC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    echo '<table class="privat">';
+    echo '<thead><tr><td>ID</td><td>Titel</td><td>Name</td><td>Vorname</td><td>Veröffentlicht</td><td>ISBN</td></tr></thead>';
+    echo '<tbody>';
+
+    while ($data = $stmt->fetch()) {     // hier wird selectiert wo gesucht wird Aotor oder Titel oder beides
+        // Auswahl nach $i
+        if ($i == 1) {
+            $name = $data['titel'] . $data['name'] . $data['vorname'];
+        } elseif ($i == 2) {
+            $name = $data['titel'];
+        } elseif ($i == 3) {
+            $name = $data['name'] . $data['vorname'];
+        } else {
+            $name = '';
+        }
+
+        $pos = stripos($name, $suche[0]);
+        $pos1 = stripos($name, $suche[1]);
+
+        if ($pos !== false && $pos1 !== false) {
+            $treffer++;
+            ausgabe($data['id'], $data['id_autor'], $data['titel'], $data['name'], $data['vorname'], $data['date'], $data['isbn']);
+        }
+    }
+
+    echo '</tbody></table>';
+    echo "<h3>Treffer: " . $treffer . "</h3>";
+}
+
+include "../footer.php";
 ?>
+
 </main>
 </body>
 </html>

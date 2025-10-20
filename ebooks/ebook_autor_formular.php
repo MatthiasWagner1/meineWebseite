@@ -7,7 +7,7 @@
 <head>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width; initial-scale=1.0;' />
-  <link rel='stylesheet' href='../dinge_formate.css' type='text/css'>
+  <link rel='stylesheet' href='../ebook_formate.css' type='text/css'>
   <title>Bücher</title>
 </head>
 <body>
@@ -33,13 +33,13 @@
     <h1>Neuen Autor anlegen</h1>
   <?php endif; ?>
 
-<div class = "dinge_formular" >
+<div class = "ebook_formular" >
 <form method="POST">
 
 <table>
-<tr><td>ID:</td><td><input type="text" name="ID" value="<?php echo $data['id_autor'] ?>" size="3" maxlength="20" readonly>
-Name:<input type="text" name="name" value="<?php echo $data['name'] ?>" size="12" maxlength="20"  readonly></td></tr>
-
+<tr><td>ID:</td><td><input type="text" name="ID" value="<?php echo $data['id_autor'] ?>" size="5" maxlength="20" readonly>
+<tr><td>Name:<td><input type="text" name="name" value="<?php echo $data['name'] ?>" size="50" maxlength="60"></td></tr>
+<tr><td>Vorname:<td><input type="text" name="vorname" value="<?php echo $data['vorname'] ?>" size="50" maxlength="60"></td></tr>
 <table>
 <tr><td>Beschreibung:</td></tr>
 
