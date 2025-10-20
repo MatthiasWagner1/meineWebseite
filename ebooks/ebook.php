@@ -68,7 +68,7 @@ if (empty($eingabe) && empty($i)) {
     $stmt->execute();
 
     echo '<table class="privat">';
-    echo '<thead><tr><td>ID</td><td>Titel</td><td>Name</td><td>Vorname</td><td>Veröffentlicht</td><td>ISBN</td></tr></thead>';
+    echo '<thead><tr><td>ID</td><td>Titel</td><td>Name</td><td>Vorname</td><td>Veröffentlicht</td><td>ID</td></tr></thead>';
     echo '<tbody>';
 
     while ($data = $stmt->fetch()) {
@@ -90,7 +90,7 @@ if (empty($eingabe) && empty($i)) {
     $stmt->execute();
 
     echo '<table class="privat">';
-    echo '<thead><tr><td>ID</td><td>Titel</td><td>Name</td><td>Vorname</td><td>Veröffentlicht</td><td>ISBN</td></tr></thead>';
+    echo '<thead><tr><td>ID</td><td>Titel</td><td>Name</td><td>Vorname</td><td>Veröffentlicht</td><td>ID</td></tr></thead>';
     echo '<tbody>';
 
     while ($data = $stmt->fetch()) {     // hier wird selectiert wo gesucht wird Aotor oder Titel oder beides
